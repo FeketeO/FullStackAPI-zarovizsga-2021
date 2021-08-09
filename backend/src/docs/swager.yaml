@@ -170,7 +170,7 @@ components:
           type: string
         has_error:
           type: boolean
- /race:
+ /races:
     get:
       description: Returns a list of races
       responses:
