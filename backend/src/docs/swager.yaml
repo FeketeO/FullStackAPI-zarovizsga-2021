@@ -6,6 +6,7 @@ info:
 servers:
   - url: http://localhost:3000
 paths:
+
   /cars:
     get:
       description: Returns a list of cars
@@ -141,36 +142,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-components:
-  schemas:
-    Car:
-      type: object
-      required:
-        - model
-        - year
-        - maker
-      properties:
-        model:
-          type: string
-        year:
-          type: number
-        maker:
-          type: string
-        price:
-          type: number
-        active:
-          type: boolean
-    Error:
-      type: object
-      required:
-        - message
-        - has_error
-      properties:
-        message:
-          type: string
-        has_error:
-          type: boolean
- /races:
+  /races:
     get:
       description: Returns a list of races
       responses:
@@ -215,7 +187,7 @@ components:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /cars/{_id}:
+  /races/{_id}:
     get:
       description: Get a race
       parameters:
@@ -307,6 +279,23 @@ components:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Car:
+      type: object
+      required:
+        - model
+        - year
+        - maker
+      properties:
+        model:
+          type: string
+        year:
+          type: number
+        maker:
+          type: string
+        price:
+          type: number
+        active:
+          type: boolean
     Race:
       type: object
       required:
@@ -318,7 +307,7 @@ components:
         date:
           type: string
         teams:
-          type: string
+          type: number
         street:
           type: string
         city:
